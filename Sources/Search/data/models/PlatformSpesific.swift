@@ -4,7 +4,7 @@
 //
 //  Created by Akashaka on 09/02/22.
 //
-struct PlatformSpesific: Codable {
+public struct PlatformSpesific: Codable {
     let id: Int
     let name, slug: String
     let yearStart: Int?

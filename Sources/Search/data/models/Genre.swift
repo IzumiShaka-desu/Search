@@ -4,7 +4,7 @@
 //
 //  Created by Akashaka on 09/02/22.
 //
-struct Genre: Codable {
+public struct Genre: Codable {
     let id: Int
     let name, slug: String
     let gamesCount: Int

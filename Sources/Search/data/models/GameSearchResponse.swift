@@ -5,7 +5,7 @@
 //  Created by Akashaka on 11/02/22.
 //
 
-struct GamesSearchResponse: Codable {
+public struct GamesSearchResponse: Codable {
     let count: Int
     let next: String
     let results: [SearchItemResult]

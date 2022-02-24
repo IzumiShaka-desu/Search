@@ -5,8 +5,7 @@
 //  Created by Akashaka on 09/02/22.
 //
 
-import Foundation
-struct Developer: Codable {
+public struct Developer: Codable {
     let id: Int
     let name, slug: String
     let gamesCount: Int

@@ -4,7 +4,7 @@
 //
 //  Created by Akashaka on 09/02/22.
 //
-struct ParentPlatform: Codable {
+public struct ParentPlatform: Codable {
     let platform: EsrbRating
 }
 

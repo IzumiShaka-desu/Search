@@ -5,7 +5,7 @@
 //  Created by Akashaka on 18/02/22.
 //
 
-struct SearchItemResultEntity: Equatable, Identifiable {
+public struct SearchItemResultEntity: Equatable, Identifiable {
   let id: Int
   let name: String
   let imageUrl: String

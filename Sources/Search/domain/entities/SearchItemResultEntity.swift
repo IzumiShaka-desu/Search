@@ -6,7 +6,7 @@
 //
 
 public struct SearchItemResultEntity: Equatable, Identifiable {
-  let id: Int
+  public let id: Int
   let name: String
   let imageUrl: String
   let released: String

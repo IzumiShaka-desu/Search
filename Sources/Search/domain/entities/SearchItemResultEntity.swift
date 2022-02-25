@@ -11,6 +11,7 @@ public struct SearchItemResultEntity: Equatable, Identifiable {
  public let released: String
  public let genres: [String]
 }
+
 public extension SearchItemResult {
    func toEntity() -> SearchItemResultEntity {
     return SearchItemResultEntity(

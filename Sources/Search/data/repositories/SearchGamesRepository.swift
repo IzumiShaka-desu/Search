@@ -12,16 +12,16 @@ public protocol SearchGamesRepositoryProtocol {
 }
 public final class SearchGamesRepository: NSObject {
   typealias GamesInstance = (SearchRemoteDataSource) -> SearchGamesRepository
-  
+
   fileprivate let remote: SearchRemoteDataSource
   private init( remote: SearchRemoteDataSource) {
     self.remote = remote
   }
-  
+
   static let sharedInstance: GamesInstance = {remoteRepo in
     return SearchGamesRepository(remote: remoteRepo)
   }
-  
+
 }
  extension SearchGamesRepository: SearchGamesRepositoryProtocol {
   public func searchGames(for query: String) -> AnyPublisher<GamesSearchEntity, Error> {

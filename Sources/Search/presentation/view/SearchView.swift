@@ -70,7 +70,7 @@ struct SearchView: View {
                    )
                   }
                   .listRowBackground(Color.flatDarkBackground)
-                  
+
                 }
               } else {
                 Text("Search result empty")

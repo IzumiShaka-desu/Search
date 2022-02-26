@@ -17,11 +17,11 @@ public protocol SearchGamesUseCase {
 public class SearchGamesInteractor: SearchGamesUseCase {
 
   private let repository: SearchGamesRepositoryProtocol
-  
+
   public required init(repository: SearchGamesRepositoryProtocol) {
     self.repository = repository
   }
-  
+
  public func searchGames(for query: String) -> AnyPublisher<GamesSearchEntity, Error> {
     return repository.searchGames(for: query)
   }

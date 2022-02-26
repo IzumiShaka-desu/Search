@@ -38,5 +38,5 @@ extension SearchRemoteDataSource: SearchRemoteDataSourceProtocol {
       // Fallback on earlier versions
     }
   }
-  
+
 }

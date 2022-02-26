@@ -19,7 +19,7 @@ public class SearchGamesPresenter: ObservableObject {
   @Published var isLoading: Bool = false
   @Published var isError: Bool = false
   @Published var query = ""
-  
+
   init(searchUseCase: SearchGamesUseCase, router: SearchRouterBase) {
     self.searchUseCase = searchUseCase
     self.router = router

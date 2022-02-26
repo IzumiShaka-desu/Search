@@ -41,5 +41,3 @@ public struct GenreItem: Codable {
 public struct Platform: Codable {
     let platform: GenreItem
 }
-
-

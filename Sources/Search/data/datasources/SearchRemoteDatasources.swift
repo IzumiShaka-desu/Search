@@ -8,17 +8,17 @@ import Combine
 import Alamofire
 import Foundation
 import Common
-protocol SearchRemoteDataSourceProtocol: AnyObject {
+public protocol SearchRemoteDataSourceProtocol: AnyObject {
   func searchGames(for query: String) -> AnyPublisher<GamesSearchResponse, Error>
 }
-final class SearchRemoteDataSource: NSObject {
+public final class SearchRemoteDataSource: NSObject {
 
   private override init() { }
-  static let sharedInstance: SearchRemoteDataSource =  SearchRemoteDataSource()
+ public static let sharedInstance: SearchRemoteDataSource =  SearchRemoteDataSource()
 
 }
 extension SearchRemoteDataSource: SearchRemoteDataSourceProtocol {
-  func searchGames(for query: String) -> AnyPublisher<GamesSearchResponse, Error> {
+ public func searchGames(for query: String) -> AnyPublisher<GamesSearchResponse, Error> {
     if #available(macOS 10.15, *) {
       return Future<GamesSearchResponse, Error> { completion in
         if let url = API.buildUrl(endpoint: .games, args: ["search": query]) {

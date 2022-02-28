@@ -11,10 +11,10 @@ public protocol SearchGamesRepositoryProtocol {
   func searchGames(for query: String) -> AnyPublisher<GamesSearchEntity, Error>
 }
 public final class SearchGamesRepository: NSObject {
-  typealias GamesInstance = (SearchRemoteDataSource) -> SearchGamesRepository
+  typealias GamesInstance = (SearchRemoteDataSourceProtocol) -> SearchGamesRepository
 
-  fileprivate let remote: SearchRemoteDataSource
-  private init( remote: SearchRemoteDataSource) {
+  fileprivate let remote: SearchRemoteDataSourceProtocol
+  private init( remote: SearchRemoteDataSourceProtocol) {
     self.remote = remote
   }
 

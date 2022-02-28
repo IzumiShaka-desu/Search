@@ -25,7 +25,7 @@ public class SearchGamesPresenter: ObservableObject {
     self.router = router
   }
 
- public ] func searchGames() {
+ public  func searchGames() {
     isLoading = true
     searchUseCase.searchGames(for: query)
       .receive(on: RunLoop.main)

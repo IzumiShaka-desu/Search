@@ -8,7 +8,7 @@
 import SwiftUI
 
 open class SearchRouterBase {
-
+open init() {}
  open func makeDetailView(for id: Int) -> some View {
 
     return DefaultView()

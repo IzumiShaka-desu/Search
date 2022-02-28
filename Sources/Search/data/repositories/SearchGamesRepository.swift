@@ -23,7 +23,7 @@ public final class SearchGamesRepository: NSObject {
   }
 
 }
-public extension SearchGamesRepository: SearchGamesRepositoryProtocol {
+ extension SearchGamesRepository: SearchGamesRepositoryProtocol {
   public func searchGames(for query: String) -> AnyPublisher<GamesSearchEntity, Error> {
     return self.remote
       .searchGames(for: query)

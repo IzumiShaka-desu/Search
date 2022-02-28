@@ -17,7 +17,7 @@ public final class SearchRemoteDataSource: NSObject {
  public static let sharedInstance: SearchRemoteDataSource =  SearchRemoteDataSource()
 
 }
-extension SearchRemoteDataSource: SearchRemoteDataSourceProtocol {
+public extension SearchRemoteDataSource: SearchRemoteDataSourceProtocol {
  public func searchGames(for query: String) -> AnyPublisher<GamesSearchResponse, Error> {
     if #available(macOS 10.15, *) {
       return Future<GamesSearchResponse, Error> { completion in

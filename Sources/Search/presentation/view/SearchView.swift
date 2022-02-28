@@ -8,10 +8,10 @@
 import SwiftUI
 import UIKit
 import Common
-public struct SearchView: View {
-  @ObservedObject var presenter: SearchGamesPresenter
+public struct SearchView<DetailView: View>: View {
+  @ObservedObject var presenter: SearchGamesPresenter<DetailView>
   @State private var isEditing = false
-public  init(presenter: SearchGamesPresenter) {
+public  init(presenter: SearchGamesPresenter<DetailView>) {
     self.presenter=presenter
   }
 public  var body: some View {

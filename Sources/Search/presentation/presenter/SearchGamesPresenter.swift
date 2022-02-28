@@ -8,10 +8,10 @@
 import SwiftUI
 import Combine
 
-public class SearchGamesPresenter: ObservableObject {
+public class SearchGamesPresenter<DetailView: View>: ObservableObject {
 
   private var cancellables: Set<AnyCancellable> = []
-  private let router: SearchRouterBase
+  let router: ((_ id: Int) -> DetailView)
   private let searchUseCase: SearchGamesUseCase
 
   @Published var results: [SearchItemResultEntity] = []
@@ -20,7 +20,7 @@ public class SearchGamesPresenter: ObservableObject {
   @Published var isError: Bool = false
   @Published var query = ""
 
- public init(searchUseCase: SearchGamesUseCase, router: SearchRouterBase) {
+ public init(searchUseCase: SearchGamesUseCase, router: @escaping ((Int) -> DetailView)) {
     self.searchUseCase = searchUseCase
     self.router = router
   }
@@ -49,7 +49,7 @@ public class SearchGamesPresenter: ObservableObject {
     @ViewBuilder content: () -> Content
   ) -> some View {
     NavigationLink(
-      destination: router.makeDetailView(for: id)) { content() }
+      destination: self.router(id)) { content() }
     .padding(0)
     .buttonStyle(PlainButtonStyle())
   }

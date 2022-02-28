@@ -18,12 +18,12 @@ public final class SearchGamesRepository: NSObject {
     self.remote = remote
   }
 
-  static let sharedInstance: GamesInstance = {remoteRepo in
+ public static let sharedInstance: GamesInstance = {remoteRepo in
     return SearchGamesRepository(remote: remoteRepo)
   }
 
 }
- extension SearchGamesRepository: SearchGamesRepositoryProtocol {
+public extension SearchGamesRepository: SearchGamesRepositoryProtocol {
   public func searchGames(for query: String) -> AnyPublisher<GamesSearchEntity, Error> {
     return self.remote
       .searchGames(for: query)

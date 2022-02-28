@@ -20,12 +20,12 @@ public class SearchGamesPresenter: ObservableObject {
   @Published var isError: Bool = false
   @Published var query = ""
 
-  init(searchUseCase: SearchGamesUseCase, router: SearchRouterBase) {
+ public init(searchUseCase: SearchGamesUseCase, router: SearchRouterBase) {
     self.searchUseCase = searchUseCase
     self.router = router
   }
 
-  func searchGames() {
+ public ] func searchGames() {
     isLoading = true
     searchUseCase.searchGames(for: query)
       .receive(on: RunLoop.main)

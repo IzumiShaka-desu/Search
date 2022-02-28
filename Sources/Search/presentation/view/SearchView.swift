@@ -8,13 +8,13 @@
 import SwiftUI
 import UIKit
 import Common
-struct SearchView: View {
+public struct SearchView: View {
   @ObservedObject var presenter: SearchGamesPresenter
   @State private var isEditing = false
-  init(presenter: SearchGamesPresenter) {
+public  init(presenter: SearchGamesPresenter) {
     self.presenter=presenter
   }
-  var body: some View {
+public  var body: some View {
     ZStack(alignment: .top) {
       VStack {
         HStack(alignment: .top) {

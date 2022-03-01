@@ -10,12 +10,12 @@ public struct SearchItemResult: Codable {
     let released: String?
     let backgroundImage: String?
     let rating: Double
-    let ratingsCount, reviewsTextCount, added: Int
-    let suggestionsCount: Int
-    let updated: String
+    let ratingsCount, reviewsTextCount, added: Int?
+    let suggestionsCount: Int?
+    let updated: String?
     let id: Int
-    let score: String
-    let reviewsCount: Int
+    let score: String?
+    let reviewsCount: Int?
     let genres: [GenreItem]
 
   public enum CodingKeys: String, CodingKey {

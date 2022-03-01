@@ -39,6 +39,8 @@ public class SearchGamesPresenter<DetailView: View>: ObservableObject {
           self.isLoading = false
         }
       }, receiveValue: { result in
+        self.isError = false
+        self.errorMessage = ""
         self.results=result.results
       })
       .store(in: &cancellables)

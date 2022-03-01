@@ -54,6 +54,11 @@ public  var body: some View {
             if self.presenter.isLoading {
               ProgressView().padding(16)
             } else {
+              if presenter.isError {
+                Text(presenter.errorMessage)
+                  .padding(16)
+                  .frame( alignment: Alignment.center)
+              } else {
               if let games=presenter.results {
                 List(games, id: \.id) {item in
                   presenter.linkBuilder(for: item.id) {
@@ -72,8 +77,10 @@ public  var body: some View {
                   .listRowBackground(Color.flatDarkBackground)
 
                 }
+
               } else {
                 Text("Search result empty")
+              }
               }
             }
           }
